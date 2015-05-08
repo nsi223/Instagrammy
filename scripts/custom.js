@@ -232,6 +232,7 @@ $(document).ready(function(){
         rules: {
             name: "required",
             message: "required",
+            new_field:"required",
             email: {
                 required: true,
                 email: true
@@ -243,6 +244,7 @@ $(document).ready(function(){
         messages: {
             name: "What's your name?",
             message: "Type your message",
+            new_field:"New field error message",
             email: {
                 required: "What's your email?",
                 email: "Please, enter a valid email"
@@ -278,6 +280,7 @@ $(document).ready(function(){
                 data: {
                     contactname: $('#contact_name').val(),
                     contactemail: $('#contact_email').val(),
+                    contactnewfield: $('#contact_new_field').val(),
                     contactmessage: $('#contact_message').val()
                 },
                 success: function() {
@@ -285,7 +288,7 @@ $(document).ready(function(){
 					$('#modalContact').modal('hide');
 					
 					//Use modal popups to display messages
-					$('#modalMessage .modal-title').html('<i class="icon icon-envelope-open"></i>Well done!<br>Your message has been successfully sent!');
+					$('#modalMessage .modal-title').html('<i class="icon icon-envelope-open"></i>Отлично!<br>Ваше сообщение успешно доставлено!');
 					$('#modalMessage').modal('show');
                 },
                 error: function() {
@@ -293,7 +296,7 @@ $(document).ready(function(){
 					$('#modalContact').modal('hide');
 					
 					//Use modal popups to display messages
-					$('#modalMessage .modal-title').html('<i class="icon icon-ban"></i>Oops!<br>Something went wrong!');
+					$('#modalMessage .modal-title').html('<i class="icon icon-ban"></i>Упс!<br>Проверьте еще раз правильность данных!');
 					$('#modalMessage').modal('show');
                 }
             });

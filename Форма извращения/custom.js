@@ -231,6 +231,8 @@ $(document).ready(function(){
         onkeyup: false,
         rules: {
             name: "required",
+            contact_telephone: "required",
+            tarif: "required",
             message: "required",
             email: {
                 required: true,
@@ -279,6 +281,9 @@ $(document).ready(function(){
                     contactname: $('#contact_name').val(),
                     contactemail: $('#contact_email').val(),
                     contactmessage: $('#contact_message').val()
+                    contacttelephone: $('#contact_telephone').val()
+                    tarif: $('#tarif').val()
+
                 },
                 success: function() {
                     $('#contact_submit').button('reset');
